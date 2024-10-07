@@ -1,3 +1,2 @@
 # QueueAPI
-Create empty databases QueueDb, CarDb and ASPNETDb in Sql Server. In the connection strings, the Sql Server is called localhost. Change this name to the name of Your actual Sql Server.
-
+Please refer to "The Aspiring Full Stack Developer's Playbook: From AI to Microservices and Kubernetes"
