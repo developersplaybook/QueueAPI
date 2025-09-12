@@ -53,6 +53,7 @@ public class Program
         builder.Services.AddTransient<IEmailSender, EmailSender>();
 
         builder.Services.AddControllersWithViews();
+        builder.Services.AddRazorPages();
         builder.Services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarApi", Version = "v1" });
@@ -122,11 +123,15 @@ public class Program
 
         app.UseAuthorization();
 
-        app.MapControllers();
-
         app.MapControllerRoute(
           name: "default",
           pattern: "{controller=Home}/{action=Index}/{id?}");
+
+        // API controllers
+        app.MapControllers();
+
+        // Razor pages om du har några
+        app.MapRazorPages();
 
         app.UseSwagger();
         app.UseSwaggerUI(c =>
